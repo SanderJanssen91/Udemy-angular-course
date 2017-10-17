@@ -11,7 +11,7 @@ import { AuthService } from "app/auth/auth.service";
 })
 export class HeaderComponent {
 
-  constructor(private recipeService: RecipeService, private dataStorageService: DataStorageService, private authService: AuthService) { };
+  constructor(private dataStorageService: DataStorageService, private authService: AuthService) { };
 
   onSaveData() {
     this.dataStorageService.storeRecipes()
@@ -24,7 +24,11 @@ export class HeaderComponent {
     this.dataStorageService.fetchRecipes();
   }
 
-  onLogout(){
+  onLogout() {
     this.authService.logout();
+  }
+
+  isAuthenticated() {
+    return this.authService.isAuthenticated();
   }
 }

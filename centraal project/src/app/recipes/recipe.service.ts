@@ -12,7 +12,7 @@ export class RecipeService {
 
   constructor(private http: Http, private shoppingListService: ShoppingListService, private router: Router, private route: ActivatedRoute) { };
 
-  private recipes: Recipe[] = [];
+    private recipes: Recipe[] = [];
 
   setRecipes(recipes:Recipe[]) {
     this.recipes = recipes;
